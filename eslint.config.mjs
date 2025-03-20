@@ -5,6 +5,17 @@ import pluginJs from "@eslint/js";
 export default [
   pluginJs.configs.recommended,
   {
-    languageOptions: { globals: { ...globals.browser, module: true } },
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+        describe: true,
+        test: true,
+        it: true,
+        expect: true,
+        require: true,
+        module: true,
+        process: true,
+      },
+    },
   },
 ];
