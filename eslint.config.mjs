@@ -8,6 +8,7 @@ export default [
     languageOptions: {
       globals: {
         ...globals.browser,
+        global: true,
         describe: true,
         test: true,
         it: true,
