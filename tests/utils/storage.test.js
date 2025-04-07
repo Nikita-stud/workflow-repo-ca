@@ -11,11 +11,9 @@ describe("Get Username functions", () => {
   });
   describe("getUsername", () => {
     it("retrieve the user from storage", () => {
-      localStorage.setItem("user1", JSON.stringify("userNumberOne"));
-    });
-    it("returned value from user object in storage", () => {
+      localStorage.setItem("user", JSON.stringify("test-user"));
       const getUser = getUsername();
-      expect(getUser).toBe("userNumberOne");
+      expect(getUser).toBe("test-user");
     });
     it("returns null from storage when no user exists", () => {
       const user = getUsername();
