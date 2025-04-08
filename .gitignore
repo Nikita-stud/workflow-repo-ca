@@ -1,2 +1,13 @@
 node_modules/
 .env
+.env.example
+.env.development
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+
+#COPY PASTE FOR LATER
+delete.js
+delete2.js
