@@ -1,5 +1,6 @@
-// import { describe, it, expect } from "vitest";
-// import { isActivePath } from "../../js/utils/userInterface.js";
+import { describe, it, expect, beforeEach } from "vitest";
+import { isActivePath } from "../../js/utils/userInterface.js";
+import { CONFIG } from "../config.test.js";
 
 /*
  *  Returns true when current path matches href exactly
@@ -18,4 +19,22 @@ export const isActivePath = (href, currentPath) => {
 };
 */
 
-// describe("", () => {});
+describe("check Path", () => {
+  beforeEach(() => {
+    global.fetch = CONFIG;
+  });
+
+  const testCases = [
+    { href: "/help", currentPath: "/help", expected: "true" },
+    { href: "/", currentPath: "/", expected: "true" },
+    { href: "/", currentPath: "/index.html", expected: "true" },
+    { href: "/help", currentPath: "/help/contact", expected: "true" },
+    { href: "/help", currentPath: "/about", expected: "false" },
+  ];
+  testCases.forEach(({ href, currentPath, expected }) => {
+    it(`returns${expected} for href ${href} and currentPath ${currentPath}`, () => {
+      const result = isActivePath(href, currentPath);
+      expect(result).toBe(expected);
+    });
+  });
+});

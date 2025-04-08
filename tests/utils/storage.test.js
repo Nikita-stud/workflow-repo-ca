@@ -2,7 +2,7 @@ import { describe, it, expect, beforeEach } from "vitest";
 import { getUsername } from "../../js/utils/storage.js";
 
 describe("Get Username functions", () => {
-  //We make a fake setItem and get Item from localStorage
+  //We simulate fake localStorage where we could set or get Items from the storage
   beforeEach(() => {
     const storage = {};
     global.localStorage = {
