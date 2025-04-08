@@ -25,14 +25,14 @@ describe("check Path", () => {
   });
 
   const testCases = [
-    { href: "/help", currentPath: "/help", expected: "true" },
-    { href: "/", currentPath: "/", expected: "true" },
-    { href: "/", currentPath: "/index.html", expected: "true" },
-    { href: "/help", currentPath: "/help/contact", expected: "true" },
-    { href: "/help", currentPath: "/about", expected: "false" },
+    { href: "/help", currentPath: "/help", expected: true },
+    { href: "/", currentPath: "/", expected: true },
+    { href: "/", currentPath: "/index.html", expected: true },
+    { href: "/help", currentPath: "/help/contact", expected: true },
+    { href: "/help", currentPath: "/about", expected: false },
   ];
   testCases.forEach(({ href, currentPath, expected }) => {
-    it(`returns${expected} for href ${href} and currentPath ${currentPath}`, () => {
+    it(`returns ${expected} for href (${href}) and currentPath (${currentPath})`, () => {
       const result = isActivePath(href, currentPath);
       expect(result).toBe(expected);
     });
