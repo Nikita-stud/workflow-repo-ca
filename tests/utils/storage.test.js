@@ -10,6 +10,7 @@ describe("Get Username functions", () => {
       getItem: (key) => storage[key],
     };
   });
+
   describe("getUsername", () => {
     //We set fake user object in fake localStorage and check it he exists
     it("retrieve the user from storage", () => {
