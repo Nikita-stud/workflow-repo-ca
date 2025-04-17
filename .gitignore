@@ -5,6 +5,3 @@ node_modules/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
-
-#COPY PASTE FOR LATER
-delete2.js
